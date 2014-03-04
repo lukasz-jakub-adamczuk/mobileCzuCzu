@@ -1,0 +1,41 @@
+body {
+	font: 100% 'LucidaGrande', 'Verdana', 'Ubuntu', sans-serif;
+}
+h1 {
+	margin: 1em;
+	text-align: center;
+}
+section {
+	position: absolute;
+	bottom: 25%;
+	width: 100%;
+}
+section > span {
+	display: inline-block;
+	width: 32%;
+	text-align: center;
+}
+span > a {
+	text-decoration: none;
+	font-size: 10em;
+}
+span > a:hover {
+	opacity: .75;
+}
+span > a.correct:active {
+	color: 000;
+}
+
+
+
+
+
+.red {
+	color: red;
+}
+.yellow {
+	color: yellow;
+}
+.blue {
+	color: #16b;
+}
