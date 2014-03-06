@@ -12,15 +12,21 @@ section {
 }
 section > span {
 	display: inline-block;
+	vertical-align: middle;
 	width: 32%;
 	text-align: center;
+	line-height: 15em
 }
 span > a {
 	text-decoration: none;
-	font-size: 10em;
+	vertical-align: middle;
+	font-size: 12em;
+	/*transition: 1s all;*/
+
 }
 span > a:hover {
 	opacity: .75;
+	font-size: 13em;
 }
 span > a.correct:active {
 	color: 000;
