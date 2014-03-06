@@ -1,21 +1,28 @@
 $(document).ready(function() {
 	console.log('jquery ready...');
 
-	var all = riddles.length;
-	console.log(all);
+	console.log(riddles.length);
+	console.log(colors.length);
 
 	$('section span a').click(function() {
 		console.log('click');
 		if ($(this).attr('data-answer') != null) {
-			var riddle = getRandomInt(0, all-1);
+			var riddle, color;
+			
+			riddle = getRandomInt(0, riddles.length-1);
+			color = getRandomInt(1, colors.length-2);
+
+			console.log('riddle: ' + riddles.length);
+			console.log('color:  ' + colors.length);
+
 			console.log('ok');
-			newRiddle(riddle);
+			newRiddle(riddle, color);
 		}
 		return false;
 	});	
 });
 
-var newRiddle = function(riddle) {
+var newRiddle = function(riddle, color) {
 
 	$('h1').text(riddles[riddle].question);
 
@@ -27,16 +34,21 @@ var newRiddle = function(riddle) {
 		}
 	});
 
+	var use = color-1;
+
 	$.each(icons, function(idx, itm) {
 		var icon = riddles[riddle].icons[idx];
 		
 		$(itm).attr('class', '');
+		$(itm).addClass(colors[use].name);
 
 		if (icon == riddles[riddle].answer) {
 			$(itm).attr('data-answer', 'correct');
 			$(itm).addClass('correct');
 		}
 		$(itm).addClass('icon-' + icon);
+
+		use++;
 	});
 }
 

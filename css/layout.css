@@ -24,9 +24,10 @@ span > a {
 	/*transition: 1s all;*/
 
 }
-span > a:hover {
+span > a:hover,
+span > a:active {
 	opacity: .75;
-	font-size: 13em;
+	font-size: 14em;
 }
 span > a.correct:active {
 	color: 000;
@@ -39,9 +40,26 @@ span > a.correct:active {
 .red {
 	color: red;
 }
-.yellow {
-	color: yellow;
+.green {
+	color: green;
 }
 .blue {
 	color: #16b;
+}
+
+.black {
+	color: black;
+}
+.white {
+	color: white;
+}
+
+.cyan {
+	color: cyan;
+}
+.magenta {
+	color: magenta;
+}
+.yellow {
+	color: yellow;
 }
