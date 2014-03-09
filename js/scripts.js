@@ -4,10 +4,20 @@ $(document).ready(function() {
 	console.log(riddles.length);
 	console.log(colors.length);
 
+	var processing = false;
+
+	// init
+	newRiddle(0, 5);
+
 	$('section span a').click(function() {
 		console.log('click');
+		if (processing) {
+			return false;
+		}
 		if ($(this).attr('data-answer') != null) {
 			var riddle, color;
+
+			processing = true;
 			
 			riddle = getRandomInt(0, riddles.length-1);
 			color = getRandomInt(1, colors.length-2);
@@ -16,7 +26,18 @@ $(document).ready(function() {
 			console.log('color:  ' + colors.length);
 
 			console.log('ok');
-			newRiddle(riddle, color);
+			// hidding incorrect answers
+			$('.incorrect').animate({'font-size': 0}, 1000);
+
+			setTimeout(function() {
+				$('.correct').hide();
+			}, 1000);
+
+			// new riddle with delay
+			setTimeout(function() {
+				newRiddle(riddle, color);
+				processing = false;
+			}, 1500);
 		}
 		return false;
 	});	
@@ -40,13 +61,16 @@ var newRiddle = function(riddle, color) {
 		var icon = riddles[riddle].icons[idx];
 		
 		$(itm).attr('class', '');
+		$(itm).attr('style', null);
 		$(itm).addClass(colors[use].name);
 
 		if (icon == riddles[riddle].answer) {
 			$(itm).attr('data-answer', 'correct');
 			$(itm).addClass('correct');
+		} else {
+			$(itm).addClass('incorrect');
 		}
-		$(itm).addClass('icon-' + icon);
+		$(itm).addClass('icon-' + icon).animate({'font-size': '12em'}, 500);
 
 		use++;
 	});

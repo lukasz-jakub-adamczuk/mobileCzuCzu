@@ -19,56 +19,137 @@ var riddles = [{
 	icons: ["lightning", "cloud", "brightness-medium"],
 	answer: "lightning"
 }, {
+	question: "Pokaż chmurę",
+	icons: ["brightness-medium", "lightning", "cloud"],
+	answer: "cloud"
+}, {
+	question: "Pokaż słońce",
+	icons: ["cloud", "brightness-medium", "lightning"],
+	answer: "brightness-medium"
+}, {
 	question: "Gdzie znajduje się klucz?",
-	icons: ["wrench", "bell", "cloud"],
+	icons: ["wrench", "bell", "leaf"],
 	answer: "wrench"
 }, {
 	question: "Gdzie znajduje się klucz?",
-	icons: ["wrench", "bell", "cloud"],
-	answer: "wrench"
+	icons: ["heart", "key", "cloud"],
+	answer: "key"
+}, {
+	question: "Gdzie znajduje się klucz?",
+	icons: ["cloud", "bell", "key2"],
+	answer: "key2"
+}, {
+	question: "Gdzie znajduje się prezent?",
+	icons: ["key2", "gift", "bell"],
+	answer: "gift"
+}, {
+	question: "Gdzie znajduje się apteczka?",
+	icons: ["cloud", "aid", "wrench"],
+	answer: "aid"
+}, {
+	question: "Pokaż robaczka?",
+	icons: ["lock", "bug", "heart"],
+	answer: "bug"
 }, {
 	question: "Gdzie jest kotek?",
-	icons: ["tux", "github", "twitter"],
+	icons: ["github", "twitter", "tux"],
 	answer: "github"
 }, {
-	question: "Która strzałka wskazuje do góry",
+	question: "Gdzie jest pingwin?",
+	icons: ["twitter", "tux", "github"],
+	answer: "tux"
+}, {
+	question: "Gdzie jest wróbelek?",
+	icons: ["tux", "github", "twitter"],
+	answer: "twitter"
+}, {
+	question: "Pokaż jabłko",
+	icons: ["food", "apple", "bug"],
+	answer: "apple"
+}, {
+	question: "Która strzałka wskazuje do góry?",
 	icons: ["arrow-left", "arrow-up", "arrow-right"],
 	answer: "arrow-up"
+}, {
+	question: "Która strzałka wskazuje w dół?",
+	icons: ["arrow-left", "arrow-up", "arrow-down"],
+	answer: "arrow-down"
+}, {
+	question: "Która strzałka wskazuje w lewo?",
+	icons: ["arrow-left", "arrow-up", "arrow-right"],
+	answer: "arrow-left"
+}, {
+	question: "Która strzałka wskazuje w prawo?",
+	icons: ["arrow-up", "arrow-right", "arrow-left"],
+	answer: "arrow-right"
 }, {
 	question: "Czego używamy do jedzenia?",
 	icons: ["food", "cloud", "quill"],
 	answer: "food"
 }, {
 	question: "Czego używamy do jedzenia?",
-	icons: ["bell", "mug", "quill"],
+	icons: ["bell", "mug", "alarm"],
 	answer: "mug"
 }, {
-	question: "Pokaż jabłko",
-	icons: ["food", "apple", "bug"],
-	answer: "apple"
+	question: "Pokaż kieliszek?",
+	icons: ["flag", "bell", "glass"],
+	answer: "glass"
 }, {
-	question: "Co lata?",
+	question: "Gdzie znajduje się dzwonek?",
+	icons: ["cart", "flag", "bell"],
+	answer: "bell"
+}, {
+	question: "Pokaż budzik?",
+	icons: ["alarm", "sad", "glass"],
+	answer: "alarm"
+}, {
+	question: "Gdzie znajduje się wózek sklepowy?",
+	icons: ["hammer", "alarm", "cart"],
+	answer: "cart"
+}, {
+	question: "Gdzie znajduje się flaga?",
+	icons: ["cart", "flag", "alarm"],
+	answer: "flag"
+}, {
+	question: "Co lata w powietrzu?",
 	icons: ["truck", "glass", "airplane"],
 	answer: "airplane"
+}, {
+	question: "Co jeździ po drodze?",
+	icons: ["truck", "glass", "airplane"],
+	answer: "truck"
 }, {
 	question: "Pokaż młotek",
 	icons: ["hammer", "aid", "bell"],
 	answer: "hammer"
 }, {
+	question: "Pokaż pióro",
+	icons: ["star2", "quill", "bell"],
+	answer: "quill"
+}, {
+	question: "Gdzie znajduje się flaga?",
+	icons: ["airplane", "flag", "alarm"],
+	answer: "flag"
+}, {
 	question: "Która gwiazdka jest pusta?",
 	icons: ["star", "star", "star2"],
 	answer: "star2"
+}, {
+	question: "Gdzie znajduje się wózek sklepowy?",
+	icons: ["hammer", "alarm", "cart"],
+	answer: "cart"
 }, {
 	question: "Kto jest wesoły?",
 	icons: ["smiley2", "sad", "sad2"],
 	answer: "smiley2"
 }, {
 	question: "Pokaż nożyczki",
-	icons: ["cart", "scissors", "flag"],
+	icons: ["scissors", "cart", "leaf"],
 	answer: "scissors"
 }];
 var icons = [{
 	name: "aid",
+	color: "red",
 	group: "",
 	difficulty: 3
 }, {
@@ -80,7 +161,16 @@ var icons = [{
 	group: "",
 	difficulty: 2
 }, {
+	name: "bell",
+	group: "",
+	difficulty: 2
+}, {
 	name: "books",
+	group: "",
+	difficulty: 2
+}, {
+	name: "cloud",
+	color: "blue",
 	group: "",
 	difficulty: 2
 }, {
@@ -89,6 +179,7 @@ var icons = [{
 	difficulty: 1
 }, {
 	name: "heart",
+	color: "red",
 	group: "",
 	difficulty: 1
 }, {
@@ -97,6 +188,7 @@ var icons = [{
 	difficulty: 1
 }, {
 	name: "github",
+	color: "black",
 	group: "",
 	difficulty: 1
 }, {
@@ -109,8 +201,14 @@ var icons = [{
 	difficulty: 1
 }, {
 	name: "leaf",
+	color: "green",
 	group: "",
 	difficulty: 2
+}, {
+	name: "lightning",
+	color: "blue",
+	group: "",
+	difficulty: 1
 }, {
 	name: "scissors",
 	group: "",
@@ -121,6 +219,7 @@ var icons = [{
 	difficulty: 2
 }, {
 	name: "star",
+	color: "yellow",
 	group: "",
 	difficulty: 1
 }, {
